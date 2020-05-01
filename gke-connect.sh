@@ -63,16 +63,15 @@ fi
 ##
 
 PROJECT=$(getProject $SERVICEACCT)
-echo $PROJECT
 
 # Connect to gcloud
 COMMAND="gcloud auth activate-service-account ${SERVICEACCT} --key-file ${KEYFILE}"
-#$COMMAND
+$COMMAND
 
 # Connect to the cluster
 COMMAND="gcloud container clusters get-credentials ${CLUSTER} --zone ${ZONE} --project ${PROJECT}"
-#$COMMAND
+$COMMAND
 
 COMMAND="kubectl cluster-info"
-#$COMMAND
+$COMMAND
 
